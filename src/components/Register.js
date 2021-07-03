@@ -27,7 +27,6 @@ const Register = ({ setAuth }) => {
     try {
 
       const response = await axios.post("https://register-login-page.herokuapp.com/auth/register", body)
-      console.log(response)
 
       const parseRes = response.data
 
