@@ -24,9 +24,11 @@ const Login = ({ setAuth }) => {
     try {
       const body = { email, password};
 
-      const response = await axios.post("https://register-login-page.herokuapp.com/auth/login", body)
-
+      // const response = await axios.post("https://register-login-page.herokuapp.com/auth/login", body)
+      
+      const response = await axios.get("https://register-login-page.herokuapp.com/welcome")
       const parseRes = response.data
+      
       if (parseRes.token) {
         localStorage.setItem("token", parseRes.token);
         setAuth(true);
